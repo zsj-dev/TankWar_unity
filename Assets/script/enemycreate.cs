@@ -9,9 +9,10 @@ public class enemycreate : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     GameObject enemy;
+
     void Start()
     {
-        InvokeRepeating("Createnemy",0.1f,2);
+        InvokeRepeating("Crate_enemy",0.1f,2);
         
     }
 
@@ -20,7 +21,7 @@ public class enemycreate : MonoBehaviour
     {
         
     }
-    void Createnemy(){
+    void Crate_enemy(){
         GameObject node=Instantiate(enemy,this.transform);
         node.transform.position=this.transform.position;
         float dx=Random.Range(-10,10);
@@ -28,4 +29,5 @@ public class enemycreate : MonoBehaviour
         node.transform.Translate(dx,0,dz,Space.Self);
         
     }
+
 }
